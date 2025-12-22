@@ -1,0 +1,183 @@
+﻿/* Genel Ayarlar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #1a1a1a; /* Koyu tema - havalı durur */
+    color: #fff;
+}
+
+/* Header (Üst Kısım) - Flexbox Kullanımı */
+header {
+    background-color: #2c3e50;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Mobilde aşağı kaysın diye */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #e74c3c;
+}
+
+.search-bar {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+/* Form Elemanları */
+input, select, button {
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+}
+
+button {
+    cursor: pointer;
+    background-color: #e74c3c;
+    color: white;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+    button:hover {
+        background-color: #c0392b;
+    }
+
+    /* Favori butonu aktifken rengi değişsin */
+    button.active {
+        background-color: #f1c40f;
+        color: #000;
+    }
+
+/* Ana İçerik - Grid Kullanımı (Ödev Şartı) */
+main {
+    padding: 2rem;
+}
+
+.movie-grid {
+    display: grid;
+    /* Ekran boyutuna göre otomatik sütun ayarlar */
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+/* Film Kartları */
+.card {
+    background-color: #2c2c2c;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+    .card:hover {
+        transform: translateY(-5px); /* Üzerine gelince yukarı kalksın */
+    }
+
+    .card img {
+        width: 100%;
+        height: 350px;
+        object-fit: cover;
+        cursor: pointer;
+    }
+
+.card-info {
+    padding: 15px;
+}
+
+    .card-info h3 {
+        font-size: 1.1rem;
+        margin-bottom: 5px;
+    }
+
+    .card-info p {
+        font-size: 0.9rem;
+        color: #ccc;
+    }
+
+.fav-btn {
+    width: 100%;
+    margin-top: 10px;
+    background-color: #34495e;
+}
+
+/* Modal (Açılır Pencere) Tasarımı */
+.modal {
+    display: none; /* Başlangıçta gizli */
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.8);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #2c3e50;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 700px;
+    position: relative;
+    display: flex;
+    gap: 20px;
+}
+
+.modal-body {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+}
+
+    .modal-body img {
+        width: 200px;
+        border-radius: 5px;
+    }
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 30px;
+    cursor: pointer;
+    color: #fff;
+}
+
+/* Responsive (Mobil Uyumluluk) */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .search-bar {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .modal-content {
+        flex-direction: column;
+        overflow-y: auto;
+        max-height: 90vh;
+    }
+
+    .modal-body {
+        flex-direction: column;
+        align-items: center;
+    }
+}

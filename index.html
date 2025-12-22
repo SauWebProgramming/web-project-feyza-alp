@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Film Kütüphanesi - Web Proje</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <div class="logo">🎬 FilmKutusu</div>
+
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="Film adı ara...">
+
+            <select id="categorySelect">
+                <option value="all">Tüm Kategoriler</option>
+                <option value="Bilim Kurgu">Bilim Kurgu</option>
+                <option value="Aksiyon">Aksiyon</option>
+                <option value="Suç">Suç</option>
+            </select>
+
+            <button id="showFavoritesBtn" class="fav-toggle-btn">Favorilerim ⭐</button>
+        </div>
+    </header>
+
+    <main>
+        <div id="movieContainer" class="movie-grid">
+        </div>
+    </main>
+
+    <div id="movieModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <div class="modal-body">
+                <img id="modalPoster" src="" alt="Film Posteri">
+                <div class="modal-info">
+                    <h2 id="modalTitle">Film Başlığı</h2>
+                    <p><strong>Yıl:</strong> <span id="modalYear"></span></p>
+                    <p><strong>Kategori:</strong> <span id="modalCategory"></span></p>
+                    <p><strong>IMDB:</strong> <span id="modalImdb"></span>/10</p>
+                    <p class="desc" id="modalDesc">Açıklama</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
