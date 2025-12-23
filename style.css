@@ -1,5 +1,4 @@
-﻿/* Genel Ayarlar */
-* {
+﻿* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -7,11 +6,11 @@
 }
 
 body {
-    background-color: #1a1a1a; /* Koyu tema - havalı durur */
+    background-color: #1a1a1a; 
     color: #fff;
 }
 
-/* Header (Üst Kısım) - Flexbox Kullanımı */
+
 header {
     background-color: #2c3e50;
     padding: 1rem 2rem;
@@ -54,25 +53,24 @@ button {
         background-color: #c0392b;
     }
 
-    /* Favori butonu aktifken rengi değişsin */
     button.active {
         background-color: #f1c40f;
         color: #000;
     }
 
-/* Ana İçerik - Grid Kullanımı (Ödev Şartı) */
+
 main {
     padding: 2rem;
 }
 
 .movie-grid {
     display: grid;
-    /* Ekran boyutuna göre otomatik sütun ayarlar */
+
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 2rem;
 }
 
-/* Film Kartları */
+
 .card {
     background-color: #2c2c2c;
     border-radius: 10px;
@@ -83,7 +81,7 @@ main {
 }
 
     .card:hover {
-        transform: translateY(-5px); /* Üzerine gelince yukarı kalksın */
+        transform: translateY(-5px); 
     }
 
     .card img {
@@ -113,9 +111,9 @@ main {
     background-color: #34495e;
 }
 
-/* Modal (Açılır Pencere) Tasarımı */
+
 .modal {
-    display: none; /* Başlangıçta gizli */
+    display: none;
     position: fixed;
     z-index: 100;
     left: 0;
